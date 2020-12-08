@@ -28,7 +28,6 @@ public class Controller {
 	@Autowired
 	private MailService mailService;
 	
-	
 	@Value("${springboot.api.error.message}")
 	private String apiErrorMsg;
 	
@@ -54,7 +53,7 @@ public class Controller {
 			model.put(MODEL_LINK, emailValidationResponse+"&email="+request.getTo());
 			mailService.sendEmail(request, model);		
 			EntityResponse eResp = new EntityResponse();
-			eResp.setResponse("success");
+			eResp.setResponse("success.");
 			return new ResponseEntity<>(eResp,  HttpStatus.OK);					
 		}
 		catch(MailSendException e) {
