@@ -53,7 +53,7 @@ public class Controller {
 			model.put(MODEL_LINK, emailValidationResponse+"&email="+request.getTo());
 			mailService.sendEmail(request, model);		
 			EntityResponse eResp = new EntityResponse();
-			eResp.setResponse("success.");
+			eResp.setResponse("success teco");
 			return new ResponseEntity<>(eResp,  HttpStatus.OK);					
 		}
 		catch(MailSendException e) {
